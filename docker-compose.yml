@@ -1,0 +1,37 @@
+version: '3'
+services:
+  apache:
+    build: ./containers/apache-php
+    environment:
+      SLIM_ENV: development-docker
+    ports:
+      - 80:80
+    volumes:
+      - ./public:/var/www/html
+      - ./app:/var/www/app
+      - ./vendor:/var/www/vendor
+      - ./logs:/var/www/logs
+      - ./containers/apache-php/php.ini:/usr/local/etc/php/php.ini
+      - ./containers/apache-php/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:5.6
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - ./containers/mysql/my.cnf:/usr/local/etc/mysql/my.cnf
+      - ./containers/mysql/datadir:/var/lib/mysql
+    ports:
+      - 3306:3306
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOSTS: mysql
+      PMA_USER: root
+      PMA_PASSWORD: password
+    links:
+      - mysql

@@ -1,0 +1,5 @@
+/vendor/
+/logs/*
+/containers/mysql/datadir/*
+.DS_Store
+!.gitkeep
