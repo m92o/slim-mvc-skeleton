@@ -1,6 +1,8 @@
 # Slim Framework 3 MVC Skeleton Application
 
 [![Build Status](https://travis-ci.org/m92o/slim-mvc-skeleton.svg?branch=master)](https://travis-ci.org/m92o/slim-mvc-skeleton)
+[![Latest Stable Version](https://poser.pugx.org/m92o/slim-mvc-skeleton/v/stable)](https://packagist.org/packages/m92o/slim-mvc-skeleton)
+[![License](https://poser.pugx.org/m92o/slim-mvc-skeleton/license)](https://packagist.org/packages/m92o/slim-mvc-skeleton)
 
 Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the Slim 3 with the PHP-View template renderer. It also uses the Monolog logger and the Eloquent ORM.
 
