@@ -21,6 +21,13 @@ class BaseTestCase extends TestCase {
      */
     protected $withMiddleware = true;
 
+    public function __construct() {
+        parent::__construct();
+
+        // Use the environment settings
+        require __DIR__ . '/../../app/environment.php';
+    }
+
     /**
      * Process the application given a request method and URI
      *
@@ -48,9 +55,6 @@ class BaseTestCase extends TestCase {
 
         // Set up a response object
         $response = new Response();
-
-        // Use the environment settings
-        require __DIR__ . '/../../app/environment.php';
 
         // Instantiate the application
         $settings = require CONFIGS_DIR . 'settings.php';
