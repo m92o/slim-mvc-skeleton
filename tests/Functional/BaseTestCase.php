@@ -7,6 +7,9 @@ use Slim\Http\Response;
 use Slim\Http\Environment;
 use PHPUnit\Framework\TestCase;
 
+// Use the environment settings
+require __DIR__ . '/../../app/environment.php';
+
 /**
  * This is an example class that shows how you could set up a method that
  * runs the application. Note that it doesn't cover all use-cases and is
@@ -20,13 +23,6 @@ class BaseTestCase extends TestCase {
      * @var bool
      */
     protected $withMiddleware = true;
-
-    public function __construct() {
-        parent::__construct();
-
-        // Use the environment settings
-        require __DIR__ . '/../../app/environment.php';
-    }
 
     /**
      * Process the application given a request method and URI
