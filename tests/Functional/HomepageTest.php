@@ -9,7 +9,7 @@ class HomepageTest extends BaseTestCase {
         $response = $this->runApp('GET', '/');
 
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertContains('Hello, John Smith!', (string) $response->getBody());
+        $this->assertEquals('Hello, John Smith!', $response->getBody());
     }
 
     /**
@@ -19,6 +19,5 @@ class HomepageTest extends BaseTestCase {
         $response = $this->runApp('POST', '/', ['test']);
 
         $this->assertEquals(405, $response->getStatusCode());
-        $this->assertContains('Method not allowed', (string) $response->getBody());
     }
 }
