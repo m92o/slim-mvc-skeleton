@@ -23,9 +23,9 @@ $environments = [
             'database' => 'database',
             'username' => 'user',
             'password' => 'password',
-            'charset'   => 'utf8mb4',
+            'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
-            'prefix'    => '',
+            'prefix' => '',
         ],
     ],
     'development-docker' => [
@@ -51,9 +51,9 @@ $environments = [
             'database' => 'sample',
             'username' => 'sample',
             'password' => 'ze2i4woKXnvo3f3K',
-            'charset'   => 'utf8mb4',
+            'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
-            'prefix'    => '',
+            'prefix' => '',
         ],
     ],
     'development' => [
@@ -80,7 +80,6 @@ $environments = [
     ]
 ];
 
-//print_r($environment);
 return [
     'settings' => (function ($environments) {
         $env = (String) getenv('SLIM_ENV');
